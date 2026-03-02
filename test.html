@@ -1,42 +1,104 @@
-<body class="bg-white text-zinc-900 font-sans antialiased selection:bg-zinc-200">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naoki's Portfolio | 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom glow for that 'Pro' look */
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-[#0a0a0a] text-gray-100 font-sans">
 
-    <nav class="p-8 flex justify-between items-center fixed top-0 w-full bg-white/80 backdrop-blur-md z-50">
-        <span class="font-medium tracking-tight">Your Name</span>
-        <div class="space-x-6 text-sm text-zinc-500">
-            <a href="#work" class="hover:text-black transition">Work</a>
-            <a href="#stats" class="hover:text-black transition">Stats</a>
+    <nav class="fixed top-0 w-full z-50 glass py-4 px-8 flex justify-between items-center">
+        <div class="text-xl font-bold tracking-tighter">Naoki Atkins<span class="text-blue-500">.DEV</span></div>
+        <div class="space-x-8 hidden md:flex text-sm uppercase tracking-widest text-gray-400">
+            <a href="#projects" class="hover:text-white transition">Projects</a>
+            <a href="#analytics" class="hover:text-white transition">Live Stats</a>
+            <a href="#contact" class="hover:text-white transition underline decoration-blue-500">Hire Me</a>
         </div>
     </nav>
 
-    <section class="h-[70vh] flex items-end px-8 pb-20">
-        <h1 class="text-5xl md:text-7xl font-medium tracking-tighter leading-tight max-w-4xl">
-            Software engineer focusing on <span class="text-zinc-400">data-driven</span> interfaces and minimalist systems.
+    <section class="h-screen flex flex-col justify-center items-center text-center px-4">
+        <h1 class="text-6xl md:text-8xl font-black mb-6 tracking-tight">
+            I build <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">scalable</span> systems.
         </h1>
+        <p class="text-gray-400 max-w-xl text-lg leading-relaxed">
+            Data Professional with 5 years of Experience.
+        </p>
     </section>
 
-    <section id="stats" class="px-8 py-20 border-t border-zinc-100">
-        <div class="flex flex-col md:flex-row justify-between items-start gap-12">
-            <div class="w-full md:w-1/3">
-                <h2 class="text-sm uppercase tracking-widest text-zinc-400 mb-4">Live Activity</h2>
-                <div class="flex items-center gap-2">
-                    <span class="relative flex h-2 w-2">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                    </span>
-                    <p class="text-sm text-zinc-600">Active Connection to Power BI</p>
-                </div>
+    <section id="analytics" class="py-24 px-8 bg-[#0f0f0f]">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold mb-2">Live Visitor Insights</h2>
+                <p class="text-gray-500 italic">Streaming real-time data from this page to Power BI Service.</p>
             </div>
-
-            <div class="w-full md:w-2/3">
-                <div class="overflow-hidden rounded-lg border border-zinc-100 bg-zinc-50 p-2">
-                    <iframe 
-                        src="YOUR_POWER_BI_URL" 
-                        class="w-full h-[300px] filter grayscale hover:grayscale-0 transition-all duration-700"
-                        frameborder="0">
-                    </iframe>
+            
+            <div class="glass rounded-3xl overflow-hidden shadow-2xl">
+                <iframe 
+                    title="Portfolio Analytics" 
+                    width="100%" 
+                    height="500" 
+                    src="https://app.powerbi.com/view?r=eyJrIjoiMmJiNmIwZTQtMjUzNS00MmIyLWI4NDItNmY3OGMxM2VmOGU2IiwidCI6IjNkYmI0OWQ2LTE5YWEtNDU1OS1hMmI0LTVhYTM1NDI0Y2QyMyIsImMiOjZ9" 
+                    frameborder="0" 
+                    allowFullScreen="true"
+                    class="opacity-90 hover:opacity-100 transition-opacity">
+                </iframe>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                <div class="glass p-6 rounded-xl">
+                    <h3 class="text-blue-400 font-mono text-sm uppercase">Data Source</h3>
+                    <p class="text-xl font-semibold">Power BI Streaming API</p>
+                </div>
+                <div class="glass p-6 rounded-xl">
+                    <h3 class="text-emerald-400 font-mono text-sm uppercase">Hosting</h3>
+                    <p class="text-xl font-semibold">Vercel Edge</p>
+                </div>
+                <div class="glass p-6 rounded-xl">
+                    <h3 class="text-purple-400 font-mono text-sm uppercase">Status</h3>
+                    <p class="text-xl font-semibold">Live & Tracking</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <footer id="contact" class="py-12 text-center text-gray-600 border-t border-gray-900">
+        <p>© 2026 • Built with code, not builders.</p>
+    </footer>
+
+    <script>
+        const PBI_PUSH_URL = "https://api.powerbi.com/beta/3dbb49d6-19aa-4559-a2b4-5aa35424cd23/datasets/1bb3f884-4acd-4ae2-8f2d-4e2c7149e91a/rows?experience=power-bi&key=0ORQ59AjKTHnNNHfdRlS1GcGMwzC7N44Lsx9B4w5uNUTkfdn5AyiKTwmoJK9zJmgCirffJowAVCiWzSKICAmAQ%3D%3D";
+
+        async function trackVisitor() {
+            // Avoid tracking local development
+            if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+                console.log("Dev mode: Tracking disabled");
+                return;
+            }
+
+            const payload = [{
+                "timestamp": new Date().toISOString(),
+                "pageView": 1,
+                "location": Intl.DateTimeFormat().resolvedOptions().timeZone
+            }];
+
+            try {
+                await fetch(PBI_PUSH_URL, {
+                    method: "POST",
+                    body: JSON.stringify(payload)
+                });
+            } catch (e) { console.error("PBI Error", e); }
+        }
+
+        window.onload = trackVisitor;
+    </script>
 </body>
+</html>
